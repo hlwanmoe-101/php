@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap");
+@font-face {
+  font-family: "mm";
+  font-weight: normal;
+  src: url(".../fonts/MyanmarSagar.ttf");
+}
+:root {
+  --primary: #22d1ee;
+  --primary-solf: #2eb6ce60;
+  --secondary: #707070;
+  --secondary-soft: #e8e6e6;
+  --light: #fff;
+  --dark: #3a3b3c;
+  --br: 5px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+@-moz-document url-prefix() {
+  select {
+    width: 110%;
+    background-position: right 30px center !important;
+    border: none !important;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Zen Antique Soft", "mm";
+  color: var(--secondary);
+}
+body {
+  transition: 0.5s;
+}
+.line {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  background: var(--secondary);
+  border-radius: var(--br);
+}
+.app {
+  width: 700px;
+  margin: 100px auto;
+}
+.output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 50px;
+}
+.brand {
+  margin-left: 15px;
+  font-size: 40px;
+}
+.result-container {
+  display: flex;
+  align-items: center;
+}
+.result {
+  font-size: 40px;
+}
+
+.calc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  /* align-items: center; */
+}
+.container {
+  width: 150px;
+}
+.container label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.input-container {
+}
+.input,
+.from,
+.to {
+  width: 100%;
+  padding: 5px;
+  border-radius: var(--br);
+  border: 1px solid var(--secondary);
+}
+.input {
+  text-align: right;
+}
+.from-container {
+}
+.from {
+}
+.to-container {
+}
+.to {
+}
+.calculator-container {
+}
+.calc-btn {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br);
+  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.calc-btn:active {
+  background-color: var(--primary-solf);
+}
+input:focus,
+.from:focus,
+.to:focus {
+  outline: none;
+}
+.history {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /*border-collapse: collapse;*/
+  width: 100%;
+  margin-top: 20px;
+}
+
+.history td,
+.history th {
+  padding: 8px;
+  border-radius: var(--br);
+}
+.history tr {
+  background-color: var(--secondary-soft);
+}
+
+/*.history tr:nth-child(even){background-color: var(--secondary-soft); }*/
+
+.history tr:hover {
+  background-color: #ddd;
+}
+
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--light);
+}
+.history th:last-child {
+  text-align: right;
+}
+.history tr td:last-child {
+  text-align: right;
+}
+#nospace td {
+  text-align: center !important;
+}
+@media screen and (max-width: 480px) {
+  .app {
+    width: 96%;
+    margin: 30 px auto;
+  }
+  .output {
+    flex-flow: column;
+    align-items: flex-end;
+  }
+  .logo-container {
+    width: 100%;
+  }
+  .calc {
+    flex-wrap: wrap;
+  }
+  /* .input-container {
+    width: 100%;
+  }
+  
+  .calculator-container {
+    width: 100%;
+  } */
+  .container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .from-container,
+  .to-container {
+    width: 46%;
+  }
+  .calc-btn {
+    padding: 15px 0;
+  }
+  .input,
+  .from,
+  .to {
+    padding: 15px 10px;
+  }
+}
+.mode-change {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  background-color: var(--dark);
+  border-radius: 50%;
+  padding: 15px;
+}
+.mode-change .fas {
+  color: var(--light);
+}
+.night-new-mode {
+  filter: invert(100%) hue-rotate(180deg);
+}

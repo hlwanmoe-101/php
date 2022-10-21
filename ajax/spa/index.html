@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPA</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body class="bg-dark">
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-white my-3 p-2 rounded">
+                <a href="home.html" class="btn btn-outline-primary text-capitalize">home</a>
+                <a href="about.html" class="btn btn-outline-primary text-capitalize">about</a>
+                <a href="services.html" class="btn btn-outline-primary text-capitalize">Services</a>
+                <a href="contact.html" class="btn btn-outline-primary text-capitalize">Contact</a>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                   <div class="page">
+                       HOME
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+    let page=$(".page");
+    let current=location.href;
+
+    function showPage(url){
+        $.get(url,function (data) {//callback function//jquery ajax usage
+            page.html(data);
+        })
+        //page active
+        $('a').removeClass("active");
+        $(`a[href='${url}']`).addClass("active");
+
+        //document title
+        document.title= url.replace(".html","");
+
+        //url change
+        history.pushState(null,null,current+url.replace(".html",""));
+
+
+
+    }
+    $("a").click(function (e) {
+        e.preventDefault();//a tag link ကို တားဆီးခြင်း
+        let url=$(this).attr("href");
+        // console.log(url);
+        showPage(url);
+    })
+    showPage('home.html');
+</script>
+</body>
+</html>
